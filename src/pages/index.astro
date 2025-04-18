@@ -10,6 +10,17 @@ const favicon = await getImage({
 	height: 32,
 	format: 'png',
 });
+
+const socialImage = await getImage({
+	src: trisImage,
+	width: 1200,
+	height: 630,
+	format: 'jpg',
+});
+
+const title = "Is Tris in Stafford?";
+const description = "The definitive answer to whether Tris is in Stafford.";
+const siteUrl = "https://istrisinstafford.co.uk";
 ---
 
 <html lang="en">
@@ -18,7 +29,22 @@ const favicon = await getImage({
 		<link rel="icon" href={favicon.src} type="image/png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>YES</title>
+		
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={siteUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={socialImage.src} />
+		
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={siteUrl} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={socialImage.src} />
 	</head>
 	<body class="bg-black h-screen w-screen flex flex-col items-center justify-center gap-8 p-4">
 		<div class="font-display text-[20vw] text-white tracking-wider">YES</div>
