@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { Image } from 'astro:assets';
+import trisImage from '../images/tris-the-boss.jpg';
 ---
 
 <html lang="en">
@@ -8,9 +10,10 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>YES</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-black h-screen w-screen flex flex-col items-center justify-center gap-8 p-4">
+		<div class="font-display text-[20vw] text-white tracking-wider">YES</div>
+		<Image src={trisImage} alt="Just a lovely man." width={400} height={400} class="max-w-sm object-cover rounded-lg shadow-lg" />
 	</body>
 </html>
