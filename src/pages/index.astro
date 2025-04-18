@@ -2,12 +2,20 @@
 import "../styles/global.css";
 import { Image } from 'astro:assets';
 import trisImage from '../images/tris-the-boss.jpg';
+import { getImage } from 'astro:assets';
+
+const favicon = await getImage({
+	src: trisImage,
+	width: 32,
+	height: 32,
+	format: 'png',
+});
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href={favicon.src} type="image/png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>YES</title>
